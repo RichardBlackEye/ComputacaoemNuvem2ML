@@ -1,13 +1,30 @@
-from pyspark.context import SparkContext
-from pyspark.sql import SparkSession
-from pyspark.ml.classification import RandomForestClassificationModel
-from pyspark.ml.feature import VectorAssembler
+# Data Handling
+import logging
+import pickle
+import numpy as np
+from pydantic import BaseModel
+
+# Modeling
+import lightgbm
 
 # Server
 import uvicorn              #connexion
 from fastapi import FastAPI
 
 app = FastAPI()
+
+from pyspark.context import SparkContext
+from pyspark.sql import SparkSession
+from pyspark.ml.classification import RandomForestClassificationModel
+from pyspark.ml.feature import VectorAssembler
+
+# Initialize logging
+my_logger = logging.getLogger()
+my_logger.setLevel(logging.DEBUG)
+# logging.basicConfig(level=logging.DEBUG, filename='sample.log')
+
+# Initialize files
+enc = pickle.load(open('data/encoder.pickle', 'rb'))
 
 
 sc = SparkContext()
