@@ -1,11 +1,11 @@
 # Data Handling
-import logging
-import pickle
-import numpy as np
-from pydantic import BaseModel
+#import logging
+#import pickle
+#import numpy as np
+#from pydantic import BaseModel
 
 # Modeling
-import lightgbm
+#import lightgbm
 
 # Server
 import uvicorn              #connexion
@@ -19,12 +19,12 @@ from pyspark.ml.classification import RandomForestClassificationModel
 from pyspark.ml.feature import VectorAssembler
 
 # Initialize logging
-my_logger = logging.getLogger()
-my_logger.setLevel(logging.DEBUG)
+#my_logger = logging.getLogger()
+#my_logger.setLevel(logging.DEBUG)
 # logging.basicConfig(level=logging.DEBUG, filename='sample.log')
 
 # Initialize files
-enc = pickle.load(open('data/encoder.pickle', 'rb'))
+#enc = pickle.load(open('data/encoder.pickle', 'rb'))
 
 
 sc = SparkContext()
