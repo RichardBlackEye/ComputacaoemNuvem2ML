@@ -7,7 +7,7 @@ WORKDIR /usr/src/app
 # Copy and install requirements
 COPY requirements.txt /usr/src/app
 
-RUN pip3 install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy contents from your local to your docker container
 COPY . /usr/src/app
