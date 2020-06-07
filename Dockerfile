@@ -1,4 +1,4 @@
-FROM tiangolo/uvicorn-gunicorn:python3.6-alpine3.8
+FROM tiangolo/uvicorn-gunicorn:python3.8
 
 # Make directories suited to your application
 RUN mkdir -p /usr/src/app
