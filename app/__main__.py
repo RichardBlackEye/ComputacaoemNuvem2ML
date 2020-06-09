@@ -2,6 +2,8 @@
 
 import connexion
 
+from flask import Flask
+
 from swagger_server import encoder
 
 def main():
