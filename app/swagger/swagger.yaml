@@ -1,0 +1,78 @@
+---
+swagger: "2.0"
+info:
+  description: "This is an API for the World Development Indicators Machine Learning\
+    \ process with Spark. For this sample, you can use the api key `special-key` to\
+    \ test the authorization filters."
+  version: "1.0.0"
+  title: "Word Development Indicators ML"
+  termsOfService: "http://swagger.io/terms/"
+  contact:
+    email: "apiteam@swagger.io"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "bigquery.googleapis.com"
+basePath: "/v1/projects/cloudcomputworlddevelopment/regions/us-central1/jobs:submit/"
+tags:
+- name: "machine_learnig"
+  description: "Everything about Machine Learning jobs."
+schemes:
+- "https"
+- "http"
+paths:
+  /machine_learning:
+    post:
+      tags:
+      - "machine_learnig"
+      summary: "Post a ML Job."
+      description: ""
+      operationId: "post_ml_job"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Post a ML Job."
+        required: true
+        schema:
+          $ref: "#/definitions/MachineLearning"
+      responses:
+        "405":
+          description: "Invalid input"
+      x-swagger-router-controller: "swagger_server.controllers.machine_learnig_controller"
+definitions:
+  MachineLearning:
+    type: "object"
+    properties:
+      projectId:
+        type: "string"
+      job:
+        $ref: "#/definitions/MachineLearning_job"
+  MachineLearning_job_placement:
+    type: "object"
+    properties:
+      clusterName:
+        type: "string"
+  MachineLearning_job_reference:
+    type: "object"
+    properties:
+      jobId:
+        type: "string"
+  MachineLearning_job_pysparkJob:
+    type: "object"
+    properties:
+      mainPythonFileUri:
+        type: "string"
+      jarFileUris:
+        type: "string"
+  MachineLearning_job:
+    type: "object"
+    properties:
+      placement:
+        $ref: "#/definitions/MachineLearning_job_placement"
+      reference:
+        $ref: "#/definitions/MachineLearning_job_reference"
+      pysparkJob:
+        $ref: "#/definitions/MachineLearning_job_pysparkJob"
+externalDocs:
+  description: "Find out more about Swagger"
+  url: "http://swagger.io"
