@@ -1,8 +1,8 @@
 import connexion
 import six
 
-from swagger_server.models.machine_learning import MachineLearning  # noqa: E501
-from swagger_server import util
+from app.models.machine_learning import MachineLearning  # noqa: E501
+from app import util
 
 
 def post_ml_job(body):  # noqa: E501
