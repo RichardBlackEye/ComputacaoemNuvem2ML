@@ -4,7 +4,7 @@ import connexion
 
 from flask import Flask
 
-from swagger_server import encoder
+from app import encoder
 
 def main():
     app = connexion.App(__name__, specification_dir='./swagger/')
