@@ -1,6 +1,10 @@
+connexion == 1.1.15
+
+python_dateutil == 2.6.0
+
+setuptools >= 21.0.0
 
 uvicorn==0.8.6
-
 
 fastapi==0.35.0
 
