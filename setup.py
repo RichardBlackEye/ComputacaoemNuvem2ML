@@ -3,7 +3,7 @@
 import sys
 from setuptools import setup, find_packages
 
-NAME = "swagger_server"
+NAME = "app"
 VERSION = "1.0.0"
 
 # To install the library, run the following
@@ -27,7 +27,7 @@ setup(
     package_data={'': ['swagger/swagger.yaml']},
     include_package_data=True,
     entry_points={
-        'console_scripts': ['swagger_server=swagger_server.__main__:main']},
+        'console_scripts': ['app=app.__main__:main']},
     long_description="""\
     This is an API for the World Development Indicators Machine Learning process with Spark. For this sample, you can use the api key &#x60;special-key&#x60; to test the authorization filters.
     """
