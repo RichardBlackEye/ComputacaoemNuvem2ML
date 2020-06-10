@@ -30,7 +30,7 @@ class MachineLearning(Model):
 
         self.attribute_map = {
             'project_id': 'projectId',
-            'job': MachineLearningJob
+            'job': 'MachineLearningJob'
         }
 
         self._project_id = project_id
