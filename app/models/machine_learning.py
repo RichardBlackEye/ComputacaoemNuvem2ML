@@ -30,11 +30,11 @@ class MachineLearning(Model):
 
         self.attribute_map = {
             'project_id': 'projectId',
-            'job': 'job'
+            'job': MachineLearningJob
         }
 
         self._project_id = project_id
-        self._job = job
+        self._job = MachineLearningJob
 
     @classmethod
     def from_dict(cls, dikt) -> 'MachineLearning':
