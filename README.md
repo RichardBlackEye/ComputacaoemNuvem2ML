@@ -13,6 +13,39 @@ This example uses the [Connexion](https://github.com/zalando/connexion) library 
 Python 3.5.2+
 
 ## Usage
+
+1. It is required that the user creates a bucket in storage named "germl".
+
+2. It is required that the user creates the dataproc cluster. It can be done using the following command:
+
+gcloud dataproc clusters create mlwdi --region us-central1 --bucket germl --master-machine-type n1-standard-2 --worker-machine-type n1-standard-2
+
+3. After pushing the docker image of the ComputacaoemNuvem2ML application and deploying it, we should insert the following REST program in the POST body:
+
+{
+  "projectId": "cloudcomputworlddevelopment",
+  "job": {
+    "placement": {
+      "clusterName": "mlwdi"
+    },
+    "statusHistory": [],
+    "reference": {
+      "jobId": "germl_job",
+      "projectId": "cloudcomputworlddevelopment"
+    },
+    "pysparkJob": {
+      "mainPythonFileUri": "gs://germl/ml_model_dataproc.py",
+      "properties": {},
+      "jarFileUris": [
+        "gs://spark-lib/bigquery/spark-bigquery-latest.jar"
+      ]
+    }
+  }
+}
+
+Following indications are from the
+SWAGGER READ ME FILE:
+
 To run the server, please execute the following from the root directory:
 
 ```
