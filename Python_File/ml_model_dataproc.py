@@ -20,7 +20,8 @@ assembler = VectorAssembler(inputCols=feature_columns,outputCol="features")
 data_2 = assembler.transform(data)
 
 algo = RandomForestClassifier(featuresCol='features', labelCol='Crise')
-model = algo.fit(data_2) 
+model = algo.fit(data_2) 
+
 model.save("gs://germl/model")
 
 
