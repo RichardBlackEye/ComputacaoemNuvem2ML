@@ -16,6 +16,8 @@ Python 3.5.2+
 
 1. It is required that the user creates a bucket in storage named "germl".
 
+1.1. Upload to the "germl" bucket the file "ml_model_dataproc.py" found under folder "Python_File".
+
 2. It is required that the user creates the dataproc cluster. It can be done using the following command:
 
 gcloud dataproc clusters create mlwdi --region us-central1 --bucket germl --master-machine-type n1-standard-2 --worker-machine-type n1-standard-2
